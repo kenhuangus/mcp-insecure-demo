@@ -1,7 +1,7 @@
 # MCP Insecure Demo Project
 
 ## Overview
-This project demonstrates common vulnerabilities in Model Context Protocol (MCP) server-client architectures, focusing on SQL injection, environment variable exposure, and arbitrary code execution. It is designed for educational and security research purposes, showing how insecure design and implementation can be exploited by attackers.
+This project demonstrates a few vulnerabilities in Model Context Protocol (MCP) server-client architectures, focusing on SQL injection, environment variable exposure, and arbitrary code execution. It is designed for educational and security research purposes, showing how insecure design and implementation can be exploited by attackers.
 
 **There are two main types of vulnerable server implementations included:**
 - `vuln-mcp.py`: STDIO transport based vulnerable MCP server.
