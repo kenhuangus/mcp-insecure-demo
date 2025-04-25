@@ -31,16 +31,13 @@ Both are designed for educational purposes to showcase security vulnerabilities 
 
 ## How to Run
 
+```bash
 git clone https://github.com/kenhuangus/mcp-insecure-demo
-
+```
 ### 1. Install Dependencies
 Install the required Python packages:
 ```bash
 pip install fastapi uvicorn requests
-```
-Or, if you have a requirements.txt:
-```bash
-pip install -r requirements.txt
 ```
 
 ### 2. Start the Server
