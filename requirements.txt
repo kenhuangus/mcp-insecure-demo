@@ -1,0 +1,5 @@
+fastapi
+requests
+sse-starlette
+mcp[cli]
+python-dotenv
