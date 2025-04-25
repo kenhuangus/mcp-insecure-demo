@@ -15,7 +15,7 @@ Attack clients are provided to automate and report on exploitation attempts agai
 
 ### 1. Clone the Repository
 ```sh
-git clone <YOUR_REPO_URL>
+git clone https://github.com/kenhuangus/mcp-insecure-demo.git
 cd mcp-insecure-demo
 ```
 
@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ## Running the Vulnerable Servers
 
-### Classic MCP Server
+### STDIO Local MCP Server
 ```sh
 python vuln-mcp.py
 ```
@@ -57,7 +57,7 @@ Both servers will start on their respective default ports (see code for details)
 
 ## Running Attack Clients
 
-### Classic MCP Attack Client
+### STDIO local MCP Attack Client
 ```sh
 python attack-mcp-client.py vuln-mcp.py
 ```
