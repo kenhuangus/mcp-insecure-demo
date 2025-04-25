@@ -33,6 +33,7 @@ Both are designed for educational purposes to showcase security vulnerabilities 
 
 ```bash
 git clone https://github.com/kenhuangus/mcp-insecure-demo
+cd mcp-insecure-demo
 ```
 ### 1. Install Dependencies
 Install the required Python packages:
