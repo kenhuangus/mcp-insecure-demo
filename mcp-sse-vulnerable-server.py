@@ -22,6 +22,11 @@ def setup_database():
             address TEXT NOT NULL
         )
     """)
+    # Insert 3 initial rows
+    cursor.execute("DELETE FROM records")
+    cursor.execute("INSERT INTO records (name, address) VALUES ('Alice', '123 Main St')")
+    cursor.execute("INSERT INTO records (name, address) VALUES ('Bob', '456 Maple Ave')")
+    cursor.execute("INSERT INTO records (name, address) VALUES ('Carol', '789 Oak Dr')")
     conn.commit()
     conn.close()
 
@@ -57,7 +62,7 @@ async def attack_endpoint(request: Request):
         try:
             conn = sqlite3.connect(DB_NAME)
             cursor = conn.cursor()
-            cursor.execute(f"INSERT INTO records (name, address) VALUES ('{payload['name']}', '{payload['address']}')")
+            cursor.executescript(f"INSERT INTO records (name, address) VALUES ('{payload['name']}', '{payload['address']}')")
             conn.commit()
             # Try to query the table after attack
             try:
@@ -179,3 +184,9 @@ def execute_sql(query: str) -> str:
 @mcp.tool()
 def get_env_variable(var_name: str) -> str:
     return os.environ.get(var_name, "Not found")
+
+if __name__ == "__main__":
+    setup_database()
+    print('[SERVER] Starting FastAPI app on port 9000...')
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=9000)
