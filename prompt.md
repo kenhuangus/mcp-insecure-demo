@@ -286,9 +286,3 @@ psutil
 3. Run comprehensive attacks: `python comprehensive-attack-client.py vuln-mcp.py`
 4. Review detailed vulnerability reports and success metrics
 
-## Notes
-
-This complete implementation expands significantly beyond the original codebase [2](#3-1)  by adding file system vulnerabilities, command execution, network attacks, and cryptographic weaknesses <cite/>. The attack client provides comprehensive testing across all vulnerability categories with detailed success tracking similar to the original `AttackMCPClient` implementation [3](#3-2) . This system serves as a complete educational platform for understanding MCP security vulnerabilities across multiple attack vectors <cite/>.
-
-Wiki pages you might want to explore:
-- [Vulnerability Categories and Exploitation (kenhuangus/mcp-insecure-demo)](/wiki/kenhuangus/mcp-insecure-demo#4)
