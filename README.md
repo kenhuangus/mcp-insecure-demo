@@ -41,14 +41,14 @@ pip install -r requirements.txt
 
 ## Running the Vulnerable Servers
 
-### STDIO Local MCP Server
+### STDIO Local MCP Server (start as background process in Windows)
 ```sh
-python vuln-mcp.py
+start /B  python vuln-mcp.py
 ```
 
-### SSE Vulnerable MCP Server
+### SSE Vulnerable MCP Server(start as background process in Windows)
 ```sh
-python mcp-sse-vulnerable-server.py
+start /B  python mcp-sse-vulnerable-server.py
 ```
 
 Both servers will start on their respective default ports (see code for details).
