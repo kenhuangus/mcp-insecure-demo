@@ -60,12 +60,12 @@ Both servers will start on their respective default ports (see code for details)
 ### STDIO local MCP Attack Client, use pytonw to run it as background process in windows. or use nohup python script.py & in linux. 
 
 ```sh
-pythonw attack-mcp-client.py vuln-mcp.py
+pythonw attack-mcp-client.py vuln-mcp.py >stdio-results.txt
 ```
 
 ### SSE Attack Client
 ```sh
-pythonw mcp-sse-client-attack.py
+pythonw mcp-sse-client-attack.py > sse-results.txt
 ```
 
 Each client will attempt a series of attacks (SQL injection, environment variable exposure, etc.) and report the success rate. For the SSE server, the attack client will also attempt to exploit SSE endpoints if present.
