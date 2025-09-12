@@ -2,9 +2,12 @@ import os
 import sqlite3
 import sys
 import asyncio
-# Windows event loop fix for asyncio
+# Cross-platform event loop policy setup
 if sys.platform == "win32":
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+elif sys.platform == "darwin":  # macOS
+    # macOS uses the default event loop policy, but we can set it explicitly for consistency
+    asyncio.set_event_loop_policy(asyncio.DefaultEventLoopPolicy())
 from fastapi import FastAPI
 from mcp.server.fastmcp import FastMCP
 from app_sse import create_sse_server

@@ -87,9 +87,16 @@ class AttackMCPClient:
 
     async def test_env_variable_exposure(self):
         print("\n[*] Testing Environment Variable Exposure...")
+        # Cross-platform environment variables
         env_vars = [
-            "SECRET_KEY", "PATH", "USER", "USERNAME", "HOME", "TEMP", "COMSPEC", "SHELL", "PYTHONPATH",
-            "APPDATA", "LOCALAPPDATA", "PROGRAMFILES", "SYSTEMROOT", "NUMBER_OF_PROCESSORS", "PROCESSOR_IDENTIFIER"
+            "SECRET_KEY", "PATH", "USER", "HOME", "SHELL", "PYTHONPATH", "LANG", "LC_ALL",
+            # macOS-specific variables
+            "USERNAME", "TMPDIR", "LOGNAME", "DISPLAY", "SSH_AUTH_SOCK", "SSH_AGENT_PID",
+            "HOMEBREW_PREFIX", "HOMEBREW_CELLAR", "HOMEBREW_REPOSITORY", "HOMEBREW_SHELLENV_PREFIX",
+            "DYLD_LIBRARY_PATH", "DYLD_FRAMEWORK_PATH", "DYLD_FALLBACK_LIBRARY_PATH",
+            # Windows-specific variables (for cross-platform testing)
+            "USERNAME", "TEMP", "COMSPEC", "APPDATA", "LOCALAPPDATA", "PROGRAMFILES", 
+            "SYSTEMROOT", "NUMBER_OF_PROCESSORS", "PROCESSOR_IDENTIFIER"
         ]
         for var in env_vars:
             print(f"Env var: {var}")
